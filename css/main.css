@@ -16,7 +16,7 @@ body {
   text-align: center;
   background-color: #1F2739;
   font-family: 'Open Sans', sans-serif;
-  color: #A7A1AE; }
+  color: #E8E8E8; }
   #wrapper h1 {
     font-size: 3em;
     font-weight: 250;
@@ -32,10 +32,9 @@ body {
       border-radius: 4px;
       padding: 0.6em; }
   #wrapper .inputDivButton {
-    background-color: transparent;
-    border: 2px solid #e74c3c;
+    background-color: #e74c3c;
     border-radius: 10em;
-    color: #e74c3c;
+    color: white;
     cursor: pointer;
     font-size: 10px;
     margin: 10px;
@@ -44,9 +43,9 @@ body {
     text-transform: uppercase;
     font-family: 'Montserrat', sans-serif; }
   #wrapper .inputDivButton:hover {
-    box-shadow: 0 0 40px 40px #e74c3c inset;
-    color: white;
-    transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out; }
+    box-shadow: 0 0 40px 40px white inset;
+    color: #e74c3c;
+    transition: 300ms ease-in-out, color 300ms ease-in-out; }
   #wrapper .outputDiv {
     display: flex;
     flex-direction: column;
@@ -59,11 +58,10 @@ body {
             */ }
       #wrapper .outputDiv table thead tr {
         background-color: #1F2739;
-        height: auto;
         border-radius: 10em; }
         #wrapper .outputDiv table thead tr th {
           text-align: left;
-          color: #185875; }
+          color: #2398ff; }
       #wrapper .outputDiv table tr {
         background-color: #2C3446; }
         #wrapper .outputDiv table tr td, #wrapper .outputDiv table tr th {
