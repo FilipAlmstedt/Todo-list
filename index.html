@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inlämningsuppgift 1</title>
+
+    <link rel="stylesheet" href="css/main.css" />
+    <script src="js/main.js"></script>
+    
+</head>
+<body>
+    <div id="wrapper">
+
+        <div>
+            <h1>Min att-göra lista!</h1>
+            
+            <div class="inputDiv">
+                
+                <div>
+                    <label for="newToDoListItem">Uppgift: </label>
+                    <input type="text" id="newToDoListDescription"/>
+                </div>
+                <div>
+                    <label for="newToDoListPriority">Prioritet (Hög eller Låg) : </label>
+                    <input type="text" id="newToDoListPriority"/>
+                </div>
+                <div>
+                    <label for="newToDoListDeadlineDate">Deadline (dag och månad):</label>
+                    <input type="text" id="newToDoListDeadlineDate" placeholder="ex. 25 Mars"/>
+                </div>
+            </div>
+
+            <div>
+                <button id="addToDoItemBtn" class="inputDivButton">Lägg till</button>
+                <button id="sortToDoList" class="inputDivButton">Sortera lista</button>
+            </div>
+        </div>
+
+        <div class="outputDiv">
+
+            <table id="todoTable">
+                <thead>
+                    <tr>
+                        <th><b>Status</b></th>
+                        <th><b>Uppgift</b></th>
+                        <th><b>Prioritet</b></th>
+                        <th><b>Ska senast vara klar</b></th>
+                        <th><b>Ta bort</b></th>
+                    </tr>
+                </thead>
+                <!-- Exempel på detta ser ut i HTML-filen. Dessa dynamiska taggar skapar javascript-filen-->
+                <!--
+                <tbody>
+                    <tr id="item0" class="notCheckedCheckbox">
+                        <td><input type="checkbox" id="checkItem0"/></td>
+                        <td><label for="checkItem0">Städa Hemma</label></td>
+                        <td><label for="checkItem0">Låg</label></td>
+                        <td><label for="checkItem0">12 November</label></td>
+                        <td><button id="deleteItem0">x</button></td>
+                    </tr>
+                    <tr id="item1" class="notCheckedCheckbox">
+                        <td><input type="checkbox" id="checkItem1"/></td>
+                        <td><label for="checkItem1">Handla mat</label></td>
+                        <td><label for="checkItem1">Hög</label></td>
+                        <td><label for="checkItem1">10 December</label></td>
+                        <td><button id="deleteItem1">x</button></td>
+                    </tr>
+                </tbody>
+                -->
+            </table>
+        </div>
+
+    </div>
+</body>
+</html>
