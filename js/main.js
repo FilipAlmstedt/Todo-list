@@ -19,6 +19,8 @@ class Todo {
 /* Startar med att läsa in listan och visar den, sidan ska kolla ifall någon vill sortera listan eller ifall någon ska lägga till något nytt */ 
 window.onload = function(){
 
+    addPreMadeItems();
+
     showAndRefreshList();
 
     /* Eventlistners för att ta bort och sortera min lista */
