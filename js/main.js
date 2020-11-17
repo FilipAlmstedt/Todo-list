@@ -19,13 +19,7 @@ class Todo {
 /* Startar med att läsa in listan och visar den, sidan ska kolla ifall någon vill sortera listan eller ifall någon ska lägga till något nytt */ 
 window.onload = function(){
 
-    let todoItem1 = new Todo("Städa hemma", "Låg", "12 November");
-    let todoItem2 = new Todo("Handla mat", "Hög", "10 November"); 
-    let todoItem3 = new Todo("Plugga", "Hög", "21 November"); 
-
-    toDoList.push(todoItem1);
-    toDoList.push(todoItem2);
-    toDoList.push(todoItem3);
+    addPreMadeItems();
 
     showAndRefreshList();
 
@@ -163,3 +157,13 @@ function sortToDoList(){
     showAndRefreshList();
 }
 
+/* Funktion som lägger till exempelsaker i todo-listan så man kan se hur den kan se ut */
+function addPreMadeItems(){
+    let toDoItem1 = new Todo("Städa hemma", "Låg", "12 November");
+    let toDoItem2 = new Todo("Handla mat", "Hög", "10 November"); 
+    let toDoItem3 = new Todo("Plugga", "Hög", "21 November"); 
+
+    toDoList.push(toDoItem1);
+    toDoList.push(toDoItem2);
+    toDoList.push(toDoItem3);
+}
