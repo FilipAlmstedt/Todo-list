@@ -17,10 +17,10 @@ Make a new folder.
 To modify code for sass-files: run `npm install node-sass` in terminal.
 
 The same goes to use the gulpfile, run the following commands in the terminal:
-`npm install gulp`
-`npm install gulp-sass`
-`npm install gulp-csso`
-`npm install gulp-rename` 
+- `npm install gulp`
+- `npm install gulp-sass`
+- `npm install gulp-csso`
+- `npm install gulp-rename` 
 
 ### Variables
 * Use let instead of var
