@@ -1,17 +1,16 @@
 /* Värden som behövs i början */
 /* Skapar en array så man kan se hur listan ska se ut på skärmen */ 
 let toDoList = [];
-/* Array som lagrar min klass på alla checkbox-element som håller reda på ifall den i ibockad eller inte*/
-let checkboxStatus = [];
 
 let tbody = document.createElement("tbody");
 
 /* Klassen Todo har en beskrivning på uppgiften, prioritet och deadlinedatum som egenskaper */
 class Todo {
-    constructor(description, priority, deadlineDate){
+    constructor(description, priority, deadlineDate, status){
         this.description = description;
         this.priority = priority;
         this.deadlineDate = deadlineDate;
+        this.status = status;
     }
 }
 
@@ -56,10 +55,9 @@ function showAndRefreshList(){
         document.getElementById("checkItem"+i).addEventListener('click', () => {
             checkIfItemIsChecked(i);
             
-            /* Jag har en lista som heter checkboxStatus som lagrar alla status på mina input-element ifall checkboxen är checkad eller inte och sedan uppdateras varje gång som jag klickar
-            på någon av dem */
+            /* Kollar min status-egenskap som uppdaterar klasserna i tr-elementen så dem blir rätt*/
             for(let i=0; i<toDoList.length; i++){
-                checkboxStatus[i] = document.getElementById("item"+i).className;   
+                toDoList[i].status = document.getElementById("item"+i).className;   
             }
         });
         document.getElementById("deleteItem"+i).addEventListener('click', () => {removeItem(i);});   
@@ -67,15 +65,15 @@ function showAndRefreshList(){
 
     /* Detta är en for-loop som uppdaterar klassen på mina checkboxar. Den sätter rätt klass på mina checkboxar som antingen gör så texten blir överstryken eller inte */
     for(let i=0; i<toDoList.length; i++){
-        let tdElement = document.getElementById("item"+i);
+        let trElement = document.getElementById("item"+i);
         
-        if(checkboxStatus[i] == "checkedCheckbox"){
-            tdElement.setAttribute("class", "checkedCheckbox");
-            document.getElementById("checkItem"+i).checked = true;
+        if(toDoList[i].status == "notCheckedCheckbox"){
+            trElement.setAttribute("class", "notCheckedCheckbox");
+            document.getElementById("checkItem"+i).checked = false;
         }
         else {
-            tdElement.setAttribute("class", "notCheckedCheckbox");
-            document.getElementById("checkItem"+i).checked = false;
+            trElement.setAttribute("class", "checkedCheckbox");
+            document.getElementById("checkItem"+i).checked = true;
         }
     }    
 
@@ -110,7 +108,7 @@ function getUserInput() {
 
 /* Funktionen hämtar ett input-värde från textrutan och lägger till den i arrayen todoList. Anropar sedan funktionen som ska "refresha listan och skriva ut den igen" */
 function addItem(inputDescription, inputPriority, inputDeadlineDate){
-    let newTodoListItem = new Todo(inputDescription, inputPriority, inputDeadlineDate)
+    let newTodoListItem = new Todo(inputDescription, inputPriority, inputDeadlineDate, "notCheckedCheckbox");
     
     console.log("Du la till" + newTodoListItem.description + " i listan");
     toDoList.push(newTodoListItem);
@@ -123,12 +121,13 @@ function addItem(inputDescription, inputPriority, inputDeadlineDate){
     showAndRefreshList();
 }
 
-/*Tar bort ett element i min array och anropar sedan funktionen som refreshar sidan igen*/
+/*Tar bort ett elementet man valt och anropar sedan funktionen som refreshar sidan igen*/
 function removeItem(itemIndex){
     console.log("Du tog bort " + toDoList[itemIndex].description);
     
+    toDoList[itemIndex] = "checkedCheckbox";
+    
     toDoList.splice(itemIndex,1);
-    checkboxStatus.splice(itemIndex,1);
 
     showAndRefreshList();
 }
@@ -159,9 +158,9 @@ function sortToDoList(){
 
 /* Funktion som lägger till exempelsaker i todo-listan så man kan se hur den kan se ut */
 function addPreMadeItems(){
-    let toDoItem1 = new Todo("Städa hemma", "Låg", "12 November");
-    let toDoItem2 = new Todo("Handla mat", "Hög", "10 November"); 
-    let toDoItem3 = new Todo("Plugga", "Hög", "21 November"); 
+    let toDoItem1 = new Todo("Städa hemma", "Låg", "12 November", "notCheckedCheckbox");
+    let toDoItem2 = new Todo("Handla mat", "Hög", "10 November", "notCheckedCheckbox"); 
+    let toDoItem3 = new Todo("Plugga", "Hög", "21 November", "notCheckedCheckbox"); 
 
     toDoList.push(toDoItem1);
     toDoList.push(toDoItem2);
