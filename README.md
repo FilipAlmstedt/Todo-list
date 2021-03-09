@@ -1,6 +1,6 @@
 # My first Java Script - ToDo-List
 -------
-*A to-do list made with Vanilla JavaScript. This is based on a school assignment. Focusing on JavaScript.*
+*A to-do list made with vanilla JavaScript. This is based on a school assignment. Focusing on JavaScript.*
 
 ## Features on the website
 The website shows you a table showing you the todo-list. The user can:
